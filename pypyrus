@@ -1,0 +1,5 @@
+#! /usr/bin/env sh 
+source set_env
+
+# use forego / foreman to start multiple process
+forego start 

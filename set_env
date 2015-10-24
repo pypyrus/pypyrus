@@ -1,0 +1,16 @@
+#! /usr/bin/env sh
+#export BASEPATH=${PWD##*/} 
+export BASEPATH=${PWD} 
+export PYTHONPATH=$BASEPATH/lib:${PYTHONPATH}
+export JUPYTER_PATH=$BASEPATH/jupyter/data/
+export JUPYTER_CONFIG_DIR=$BASEPATH/jupyter/config/
+# check notebooks dir 
+[[ -z "$NOTEBOOKS_DIR" ]] && echo "Please set NOTEBOOKS_DIR to your notebooks path" && exit 1
+
+# print jupyter paths
+jupyter --paths
+# print notebooks paths
+echo "notebooks:"
+echo "    $NOTEBOOKS_DIR"
+
+

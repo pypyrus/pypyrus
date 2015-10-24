@@ -1,0 +1,13 @@
+Type: IPython Notebook Extension
+Name: Hide Input All 
+Description: This extension enables hiding the input cell
+Link: readme.md
+Icon: icon.png
+Main: main.js
+Compatibility: 4.x
+Parameters:
+- name: hide_input
+  description: Column where ruler is displayed
+  input_type: checkbox
+  default: true
+

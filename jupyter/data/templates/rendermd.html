@@ -1,0 +1,44 @@
+{% extends "page.html" %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block stylesheet %}
+{{super()}}
+{% endblock %}
+
+{% block params %}
+
+data-base-url='{{base_url}}'
+data-md-url='{{md_url}}'
+
+{% endblock %}
+
+{% block headercontainer %}
+
+<div class="pull-left nbext-page-title-wrap">
+	<span class="nbext-page-title">{{ page_title }}</span>
+</div>
+
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block site %}
+
+{# we could make everything look like notebook-formatted markdown cells by
+adding the "rendered_html" class, but it doesn't look so good for full-page
+readme files, so for now I haven't bothered #}
+<div id="render-container" class="container"></div>
+
+{% endblock %}
+
+{% block script %}
+
+    {{super()}}
+
+<script type="text/javascript" charset="utf-8">
+	require(["nbextensions/config/render"]);
+</script>
+{% endblock %}
